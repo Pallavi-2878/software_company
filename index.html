@@ -5,165 +5,227 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NovaSoft Technologies</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    body {
-      line-height: 1.6;
-      color: #333;
+    body{
+      background:#0b0b0b;
+      color:#e5e7eb;
+      line-height:1.6;
     }
 
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    header{
+      background:#000;
+      padding:18px 50px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
 
-    header h1 {
-      font-size: 26px;
+    header h1{
+      color:#38bdf8;
+      font-size:26px;
     }
 
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
+    nav a{
+      color:#e5e7eb;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover{
+      color:#38bdf8;
     }
 
-    .hero {
-      background: linear-gradient(to right, #2563eb, #1e40af);
-      color: white;
-      padding: 100px 50px;
-      text-align: center;
+    .hero{
+      min-height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:0 20px;
+      background:radial-gradient(circle at top, #1e3a8a, #000);
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+    .hero h2{
+      font-size:48px;
+      margin-bottom:20px;
+      animation:fadeIn 1.5s ease;
     }
 
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: auto;
+    .hero p{
+      max-width:700px;
+      font-size:18px;
+      color:#cbd5f5;
+      animation:fadeIn 2s ease;
     }
 
-    section {
-      padding: 60px 50px;
+    section{
+      padding:70px 50px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+    section h2{
+      text-align:center;
+      font-size:34px;
+      margin-bottom:40px;
+      color:#38bdf8;
     }
 
-    .card {
-      background: #f8fafc;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:30px;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-      color: #1e3a8a;
+    .card{
+      background:#111;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      transition:0.4s;
     }
 
-    .about, .contact {
-      background: #f1f5f9;
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 20px 40px rgba(56,189,248,0.3);
     }
 
-    footer {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+    .card h3{
+      margin-bottom:15px;
+      color:#60a5fa;
     }
 
-    footer span {
-      font-weight: bold;
+    .about, .contact{
+      background:#050505;
+      text-align:center;
+    }
+
+    .about p, .contact p{
+      max-width:800px;
+      margin:auto;
+      color:#cbd5f5;
+      font-size:17px;
+    }
+
+    footer{
+      background:#000;
+      text-align:center;
+      padding:20px;
+      font-size:14px;
+      color:#9ca3af;
+    }
+
+    footer span{
+      color:#38bdf8;
+      font-weight:bold;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      header{
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:10px;
+      }
+
+      .hero h2{
+        font-size:36px;
+      }
+
+      section{
+        padding:50px 20px;
+      }
+    }
+
+    @media(max-width:480px){
+      .hero h2{
+        font-size:30px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>NovaSoft Technologies</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>NovaSoft Technologies</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <h2>Building Smart Software Solutions</h2>
-    <p>
-      We design and develop reliable, scalable, and innovative software solutions
-      that help businesses grow in the digital era.
-    </p>
-  </div>
+<div class="hero">
+  <h2>Innovative Software for a Digital World</h2>
+  <p>
+    We craft modern, scalable, and intelligent software solutions that empower
+    businesses to grow faster and smarter.
+  </p>
+</div>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <br />
-    <div class="services">
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>Modern, responsive, and secure websites using the latest technologies.</p>
-      </div>
-      <div class="card">
-        <h3>Mobile App Development</h3>
-        <p>Android and iOS applications tailored to your business needs.</p>
-      </div>
-      <div class="card">
-        <h3>AI & ML Solutions</h3>
-        <p>Intelligent systems powered by Artificial Intelligence and Machine Learning.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Services</h3>
-        <p>Scalable and secure cloud-based software and deployment solutions.</p>
-      </div>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>High-performance, responsive websites with modern UI/UX design.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Mobile Applications</h3>
+      <p>Secure and scalable Android & iOS apps built for growth.</p>
+    </div>
+    <div class="card">
+      <h3>AI & ML Solutions</h3>
+      <p>Smart systems powered by Artificial Intelligence and Machine Learning.</p>
+    </div>
+    <div class="card">
+      <h3>Cloud & DevOps</h3>
+      <p>Reliable cloud infrastructure and continuous deployment solutions.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <br />
-    <p>
-      NovaSoft Technologies is a software development company focused on delivering
-      high-quality digital products. Our mission is to combine creativity,
-      technology, and strategy to build solutions that make a real impact.
-    </p>
-  </section>
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>
+    Pallavi Technologies is a forward-thinking software company focused on
+    delivering cutting-edge digital products with precision, performance, and
+    passion.
+  </p>
+</section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <br />
-    <p>Email: contact@novasoft.com</p>
-    <p>Phone: +91-987654321</p>
-    <p>Location: India</p>
-  </section>
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: contact@pallavi.com</p>
+  <p>Phone: +91-XXXXXXXXXX</p>
+  <p>Location: India</p>
+</section>
 
-  <footer>
-    <p>
-      © 2025 Pallavi Technologies | Developed by <span>Pallavi Tiwari</span>
-    </p>
-  </footer>
+<footer>
+  <p>© 2025 Pallavi Technologies | Developed by <span>Pallavi Tiwari</span></p>
+</footer>
 
 </body>
 </html>
